@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LandingExperience from './components/LandingExperience';
+import CareersPage from './components/CareersPage'; 
+import Header from './components/Header';
+import Footer from './components/Footer'; 
+import ProgressBar from './components/ProgressBar'; 
+
+
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+      <Routes>
+        
+        <Route path="/" element={<LandingExperience />} />
+
+        <Route path="/careers" element={<CareersPage />} />
+
+
+        
+        <Route path="/careers/:department" element={<CareersPage />} />
+        
+        <Route path="/careers" element={<CareersPage />} />
+        
+
+        
+        
+        
+        
+      </Routes>
+    </>
   );
 }
 
-export default App;
+
+export default App; 
